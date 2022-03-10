@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: Dev_Deploy
-    dependsOn: Prod_Deploy
+  - stage: DevDeploy
+    dependsOn: ProdDeploy
     jobs:
       - job: Job1
         steps:
@@ -42,8 +42,8 @@ stages:
           - script: echo Job3 from Dev Deploy -------!
             displayName: "Run a one-line script"
 
-  - stage: QA_Deploy
-    dependsOn: Prod_Deploy
+  - stage: QADeploy
+    dependsOn: ProdDeploy
     jobs:
       - job: Job1
         steps:
@@ -56,7 +56,7 @@ stages:
           - script: echo Job2 from QA Deploy-------------------------!
             displayName: "Run a one-line script"
 
-  - stage: Prod_Deploy
+  - stage: ProdDeploy
     jobs:
       - job: Job1
         steps:
