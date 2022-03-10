@@ -11,7 +11,6 @@ pool:
 
 stages:
   - stage: DevDeploy
-    dependsOn: ProdDeploy
     jobs:
       - job: Job1
         steps:
@@ -43,7 +42,7 @@ stages:
             displayName: "Run a one-line script"
 
   - stage: QADeploy
-    dependsOn: ProdDeploy
+    dependsOn: DevDeploy
     jobs:
       - job: Job1
         steps:
@@ -57,6 +56,7 @@ stages:
             displayName: "Run a one-line script"
 
   - stage: ProdDeploy
+    dependsOn: DevDeploy
     jobs:
       - job: Job1
         steps:
