@@ -11,6 +11,7 @@ pool:
 
 stages:
   - stage: Dev_Deploy
+    dependsOn: Prod_Deploy
     jobs:
       - job: Job1
         steps:
