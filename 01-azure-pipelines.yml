@@ -39,7 +39,7 @@ stages:
                 **/*.tf
               TargetFolder: "$(Build.ArtifactStagingDirectory)"
 
-          - bash: echo $(Build.ArtifactStagingDirectory)
+          - bash: ls -l $(Build.ArtifactStagingDirectory)
             displayName: "Copying filesss"
 
       - job: Job2
