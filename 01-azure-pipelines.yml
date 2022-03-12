@@ -16,6 +16,7 @@ stages:
         steps:
           - script: echo Dev Deploy!
             displayName: "Run a one-line script"
+          - bash: echo  $(pipeLineLevelVariable) ============>
 
           - script: |
               echo Add other tasks to build, test, and deploy your project.
@@ -42,12 +43,15 @@ stages:
             displayName: "Run a one-line script"
 
   - stage: QADeploy
+    variables:
+      variableOne: This is QA variable one
     dependsOn: DevDeploy
     jobs:
       - job: Job1
         steps:
           - script: echo QA Deploy Job1!
             displayName: "Run a one-line script QA Deploy"
+          - bash: echo $(variableOne) ------------>>>>>>>>
 
       - job: Job2
         dependsOn: Job1
