@@ -35,7 +35,7 @@ stages:
 
   - stage: QADeployment
     jobs:
-      - deployment: QADeploymentJob
+      - deployment: DevDeploymentJob
         environment: QA
         strategy:
           runOnce:
