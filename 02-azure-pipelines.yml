@@ -25,9 +25,6 @@ stages:
 
   - stage: DevDeployment
     jobs:
-      - job: DevDeployment
-        steps:
-          -bash: echo "Do the DevDeployment"
       - deployment: DevDeploymentJob
         environment: Dev
         strategy:
@@ -38,9 +35,6 @@ stages:
 
   - stage: QADeployment
     jobs:
-      - job: QADeployment
-        steps:
-          -bash: echo "Do the DevDeployment"
       - deployment: DevDeploymentJob
         environment: Dev
         strategy:
