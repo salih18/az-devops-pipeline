@@ -24,7 +24,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'toMyPrivateRegistry'
-        repository: 'azure/staticwebsite'
+        repository: 'registry.salihsert.com/staticwebsite'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
