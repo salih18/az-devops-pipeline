@@ -16,7 +16,7 @@ stages:
         steps:
           - script: echo Dev Deploy!
             displayName: "Run a one-line script"
-          - bash: echo $(pipeLineLevelVariable) ============>
+          - bash: echo $(pipeLineLevelVariable)
 
           - script: |
               echo Add other tasks to build, test, and deploy your project.
