@@ -17,6 +17,13 @@ stages:
           - script: echo Dev Deploy!
             displayName: "Run a one-line script"
           - bash: echo $(pipeLineLevelVariable)
+          - bash: echo $(Build.BuildNumber)
+          - bash: echo $(Build.BuildId)
+          - bash: echo $(Build.SourceBranchName)
+          - bash: echo $(Build.SourcesDirectory)
+          - bash: echo $(System.DefaultWorkingDirectory)
+          - bash: ls -R $(System.DefaultWorkingDirectory)
+          - bash: echo $(Build.ArtifactStagingDirectory)
 
           - script: |
               echo Add other tasks to build, test, and deploy your project.
