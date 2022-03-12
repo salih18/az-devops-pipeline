@@ -51,7 +51,7 @@ stages:
         steps:
           - script: echo QA Deploy Job1!
             displayName: "Run a one-line script QA Deploy"
-          - bash: echo $(variableOne) ------------>>>>>>>>
+          - bash: echo $(variableOne) test
 
       - job: Job2
         dependsOn: Job1
