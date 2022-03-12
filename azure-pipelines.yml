@@ -4,16 +4,22 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+  - main
+
+strategy:
+  matrix:
+    linux:
+      operatingSystem: "ubuntu-latest"
+    mac:
+      operatingSystem: "macos-latest"
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(operatingSystem)
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+  - stage: Development Stage
+    jobs:
+      - job: Job1
+        steps:
+          - script: echo running on $(operatingSystem)
+            displayName: "Run a one-line script"
